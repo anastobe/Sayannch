@@ -44,6 +44,8 @@ const ButtonC = (params,{navigation}) => {
         params.names === 'Download' ? "DOWNLOAD" : 
         params.names === 'Register' ? "SIGN UP" : 
 
+        //contact page 
+        params.names === 'Send Message' ? "Send Message" : 
 
         "Null" }
 

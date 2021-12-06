@@ -18,7 +18,7 @@ import {
 
 const PrivacyPolicy = () => {
 
-    const styleUpper = { fontWeight: "bold", marginTop: 30, marginBottom: 20 }
+    const styleUpper = { fontWeight: "bold", marginTop: 20, marginBottom: 20 }
 
 
     const array = [
@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
         <SafeAreaView style={styles.SafeAreaView2}>
           <View style={styles.outerWrapper}>
 
-          <View style={{  height: 40, marginTop: 50 }} >
+          <View>
           <Image  source={require('../assets/images/SayaanchLogo.png')} />
           </View>
 
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
           </View> 
 
 
-          <View style={{ margin: 10 }} >
+          <View style={{ margin: 15 }} >
           {array.map((v,i)=>{
          return(
            <View key={i}>

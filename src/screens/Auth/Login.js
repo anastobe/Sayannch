@@ -8,7 +8,8 @@ import {
     TouchableOpacity,
     Alert,
     Image,
-    Button
+    Button,
+    ScrollView
   } from 'react-native'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -36,6 +37,7 @@ const Login = () => {
     <>
       <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
       <SafeAreaView style={styles.SafeAreaView2}>
+        <ScrollView>
         <View style={styles.outerWrapper}>
 
           
@@ -73,6 +75,7 @@ const Login = () => {
  
  
         </View>
+        </ScrollView>
       </SafeAreaView>
     </>
     )

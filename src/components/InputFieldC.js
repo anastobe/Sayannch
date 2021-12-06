@@ -33,9 +33,18 @@ const InputFieldC = ({
 
         <View >
             <TextInput placeholder={props.names==='Email' ? "  Enter Email" : 
+
+            //contact
+             props.names==='Enter Email' ? "Enter your email" : 
+             props.names==='Enter Phone' ? "Enter Phone Number" : 
+             props.names==='Message' ? "Message" : 
+
              props.names==='Otp' ? "  Enter Otp" : 
+
+             //contact page also
              props.names==='fname' ? "  First Name" : 
              props.names==='lname' ? "  Last Name" : 
+             
              props.names==='contact' ? "  Contact Number" : 
              props.names==='BrandNames' ? "  Name of Brand /MT/ Protected Element" : 
              props.names==='AdditionalRemarks' ? "  Additional Remarks" : 

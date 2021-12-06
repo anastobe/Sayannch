@@ -9,7 +9,7 @@ import {
   Image,
   StyleSheet
 } from 'react-native'
-import { InputColorTxt } from '../../Colors/Color'
+import { Dark_Bule_Color, InputColorTxt, Orange_Color, White_Color } from '../../Colors/Color'
 
 //icons
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -41,30 +41,30 @@ const Account = ({ navigation }) => {
       
       <View style={styles.iconsContainer} >
      
-        <TouchableOpacity onPress={ ()=> navigation.navigate("Report") } >
+        <TouchableOpacity onPress={ ()=> navigation.navigate("Faq") } >
      <View  style={styles.icons} >
-     <Icon name={'help-outline'} size={30} color={InputColorTxt} />
+     <Icon name={'help-outline'} size={30} color={White_Color} />
       <Text style={styles.iconsTxt} >FAQ</Text>
      </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={ ()=> navigation.navigate("Contact")} >
      <View  style={styles.icons} >
-     <Icon name={'call-outline'} size={30} color={InputColorTxt} />
+     <Icon name={'call-outline'} size={30} color={White_Color} />
       <Text style={styles.iconsTxt} >CONTACT</Text>
      </View>
         </TouchableOpacity>
 
         <TouchableOpacity  onPress={ ()=> navigation.navigate("Report") }>
      <View  style={styles.icons} >
-     <Icon name={'checkmark-done-outline'} size={30} color={InputColorTxt} />
+     <Icon name={'checkmark-done-outline'} size={30} color={White_Color} />
       <Text style={styles.iconsTxt} >REPORT</Text>
      </View>
         </TouchableOpacity>
 
         <TouchableOpacity   onPress={ ()=> navigation.navigate("PrivacyPolicy") }>
      <View  style={styles.icons} >
-     <Icon name={'construct-outline'} size={30} color={InputColorTxt} />
+     <Icon name={'construct-outline'} size={30} color={White_Color} />
       <Text style={styles.iconsTxt} >POLICY</Text>
      </View>
         </TouchableOpacity>
@@ -78,8 +78,8 @@ const Account = ({ navigation }) => {
 
   return (
     <>
-      {/* <SafeAreaView style={styles.SafeAreaView2}>
-        <View style={styles.outerWrapper}> */}
+      <SafeAreaView style={styles.SafeAreaView2}>
+        <View style={styles.outerWrapper}>
 
           <ProfileUpper />
           <ProfileCards />
@@ -87,8 +87,8 @@ const Account = ({ navigation }) => {
 
         
         
-        {/* </View> */}
-    {/* //   </SafeAreaView> */}
+        </View>
+      </SafeAreaView>
     </>
   )
 }
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
    //Upper
    CardContainer:{
     alignItems: 'center',
-    backgroundColor: "#b1c71c",
+    backgroundColor: "#fff",
     justifyContent: 'center',
     height: 200,
   },
@@ -154,9 +154,9 @@ const styles = StyleSheet.create({
   },
   icons:{
     width: 150,
-    height: 100,
+    height: '50%',
     justifyContent: 'center',
-    backgroundColor: "#f4f4f4",
+    backgroundColor: Orange_Color,
     marginTop: 8,
     textAlign: "center",
     alignItems: "center",
@@ -165,6 +165,8 @@ const styles = StyleSheet.create({
     marginTop: 16,
     fontSize: 12,
     fontWeight: 'bold',  
+    color: Dark_Bule_Color,
+    
   },
 
 

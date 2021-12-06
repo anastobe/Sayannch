@@ -74,26 +74,18 @@ const Report = () => {
 
 
       const array2 = [
-        <View>
-          <Text style={array2Heading} >Adress</Text>
-          <Text style={array2Txt} >25 FLOOR AMERICA PRESIDENT HOUSE OPPOSITE</Text>    
+        <View style={{ paddingBottom: 30 }} >
+          <Text>What does Lorem Ipsum actually say?Lorem ipsum is a name for a 
+          common type of placeholder text. Also known as filler or dummy text, 
+          this is simply copy that serves to fill a space without actually saying 
+          anything meaningful. It's essentially nonsense text, but gives an idea 
+          of what real words will look like in the final productasdasdasd asdasd
+          this is simply copy that serves to fill a space without actually saying 
+          anything meaningful. It's essentially nonsense text, but gives an idea 
+          of what real words will look like in the final productasdasdasd asdasd
+          
+          .</Text>
         </View>
-        ,
-        <View>
-          <Text style={array2Heading} >General Assistance</Text>
-          <Text style={array2Txt} >info@sayaanch.com</Text>    
-        </View>
-        ,
-        <View>
-          <Text style={array2Heading} >Merchantdizing Team</Text>
-          <Text style={array2Txt} >sales1@sayaanch.com</Text>     
-        </View>
-      ,
-        <View>
-          <Text style={array2Heading} >Mobile No</Text>
-          <Text style={array2Txt} >+91 09855995699 </Text><Text style={array2Txt} >+91 7814358405 </Text><Text style={array2Txt} >+91 6280992038</Text>     
-        </View>
-      ,
   ]
 
     return (

@@ -47,17 +47,17 @@ const Contact = () => {
     </View>,
         <View>
         <View style={{ marginBottom: -30 }} >
-        <InputFieldC value={Cname} TextChange={setCname} names="contact" />         
+        <InputFieldC value={Cname} TextChange={setCname} names="Enter Email" />         
         </View>      
     </View>,
         <View>
         <View style={{ marginBottom: -30 }} >
-        <InputFieldC value={Bname} TextChange={setBname} names="BrandNames" />     
+        <InputFieldC value={Bname} TextChange={setBname} names="Enter Phone" />     
         </View>      
     </View>,
         <View>
         <View style={{ marginBottom: -30 }} >
-        <InputFieldC value={Remarks} TextChange={setRemarks} names="AdditionalRemarks" />    
+        <InputFieldC value={Remarks} TextChange={setRemarks} names="Message" />    
         </View>      
     </View>,
         <View>
@@ -121,7 +121,7 @@ const Contact = () => {
        })}
 
           {/* button */}
-          <ButtonC names="Submit" />
+          <ButtonC names="Send Message" />
 
 
           </View>

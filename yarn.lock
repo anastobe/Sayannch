@@ -539,7 +539,7 @@
     "@babel/helper-simple-access" "^7.16.0"
     babel-plugin-dynamic-import-node "^2.3.3"
 
-"@babel/plugin-transform-object-assign@^7.0.0":
+"@babel/plugin-transform-object-assign@^7.0.0", "@babel/plugin-transform-object-assign@^7.10.4":
   version "7.16.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.16.0.tgz#750c726397f1f6402fb1ceffe9d8ff3595c8a0df"
   integrity sha512-TftKY6Hxo5Uf/EIoC3BKQyLvlH46tbtK4xub90vzi9+yS8z1+O/52YHyywCZvYeLPOvv//1j3BPokLuHTWPcbg==
@@ -1741,6 +1741,11 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+audit@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/audit/-/audit-0.0.6.tgz#fef17dd84af1dcd2a5633fd46d3b1adcb084bf3b"
+  integrity sha1-/vF92Erx3NKlYz/UbTsa3LCEvzs=
 
 babel-core@^7.0.0-bridge.0:
   version "7.0.0-bridge.0"
@@ -3052,6 +3057,15 @@ find-up@^4.0.0, find-up@^4.1.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
+
+fix@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/fix/-/fix-0.0.6.tgz#07e593a27414ddc486ee52d50f9c8e09885a0305"
+  integrity sha1-B+WTonQU3cSG7lLVD5yOCYhaAwU=
+  dependencies:
+    pipe "0.0.2"
+    underscore "1.1.6"
+    underscore.string "1.1.4"
 
 flat-cache@^2.0.1:
   version "2.0.1"
@@ -4888,6 +4902,11 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+mockdate@^3.0.2:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
+  integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -5342,6 +5361,11 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
+pipe@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/pipe/-/pipe-0.0.2.tgz#a16fe6fc019d75bd987c4928a67e1e50e4f5b44f"
+  integrity sha1-oW/m/AGddb2YfEkopn4eUOT1tE8=
+
 pirates@^4.0.0, pirates@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.1.tgz#643a92caf894566f91b2b986d2c66950a8e2fb87"
@@ -5524,6 +5548,16 @@ react-native-gesture-handler@^1.10.3:
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-reanimated@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.2.4.tgz#36c5d15028b0bd7d479fba5199117ac870c7a532"
+  integrity sha512-Nn648MfEEnTCEiWsl1YmfkojiLyV0NMY0EiRdDRbZNfJVfxBuyqhCxI/4Jd7aBi162qpgf8XK2mByYgvF4zLrQ==
+  dependencies:
+    "@babel/plugin-transform-object-assign" "^7.10.4"
+    fbjs "^3.0.0"
+    mockdate "^3.0.2"
+    string-hash-64 "^1.0.3"
 
 react-native-safe-area-context@^3.3.0:
   version "3.3.2"
@@ -6268,6 +6302,11 @@ strict-uri-encode@^2.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
   integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
+string-hash-64@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string-hash-64/-/string-hash-64-1.0.3.tgz#0deb56df58678640db5c479ccbbb597aaa0de322"
+  integrity sha512-D5OKWKvDhyVWWn2x5Y9b+37NUllks34q1dCDhk/vYcso9fmhs+Tl3KR/gE4v5UNj2UA35cnX4KdVVGkG1deKqw==
+
 string-length@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/string-length/-/string-length-4.0.2.tgz#a8a8dc7bd5c1a82b9b3c8b87e125f66871b6e57a"
@@ -6615,6 +6654,18 @@ unbox-primitive@^1.0.1:
     has-bigints "^1.0.1"
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
+
+underscore.string@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-1.1.4.tgz#9be06b23b8e3d996ea2020f9984202069e3dee12"
+  integrity sha1-m+BrI7jj2ZbqICD5mEICBp497hI=
+  dependencies:
+    underscore "1.1.6"
+
+underscore@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.1.6.tgz#6868da1bdd72d75285be0b4e50f228e70d001a2c"
+  integrity sha1-aGjaG91y11KFvgtOUPIo5w0AGiw=
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"

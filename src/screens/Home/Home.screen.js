@@ -23,8 +23,9 @@ const Home = () => {
       <SafeAreaView style={styles.SafeAreaView2}>
         <View style={styles.outerWrapper}>
 
-          
-          <Header />
+
+
+          <Text>Home</Text>
 
 
 
