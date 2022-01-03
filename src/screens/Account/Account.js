@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   SafeAreaView,
   View,
@@ -7,87 +7,94 @@ import {
   TouchableOpacity,
   Alert,
   Image,
-  StyleSheet
+  StyleSheet,
+  ScrollView
 } from 'react-native'
 import { Dark_Bule_Color, InputColorTxt, Orange_Color, White_Color } from '../../Colors/Color'
 
 //icons
 import Icon from 'react-native-vector-icons/Ionicons'
+import { getApi } from '../../api/fakeApiUser'
+import { base_url } from '../../utils/baseUrl'
 
 const Account = ({ navigation }) => {
 
+  const list = [
+    {
+      title: "FAQ",
+      onPress: () => { navigation.navigate("Faq") }
+    },
+    {
+      title: "Contact Us",
+      onPress: () => { navigation.navigate("Contact") }
+    },
+    {
+      title: "Report",
+      onPress: () => { navigation.navigate("Report") }
+    }
+  ]
 
+  const [cms, setCms] = useState([])
 
-  
+  useEffect(() => {
+    getCms()
+  }, [])
 
-  const ProfileUpper=()=> {
-    return(
-      
-    <View style={styles.CardContainer}>
-
-        <View style={styles.ImgContainer} >
-          <Image source={ require("../../assets/images/SayaanchLogo.png") } /> 
-        </View>
-
-  </View>
-  
-  )
-  }
-
-
-  
-  const ProfileCards=()=> {
-    return(
-      
-      <View style={styles.iconsContainer} >
-     
-        <TouchableOpacity onPress={ ()=> navigation.navigate("Faq") } >
-     <View  style={styles.icons} >
-     <Icon name={'help-outline'} size={30} color={White_Color} />
-      <Text style={styles.iconsTxt} >FAQ</Text>
-     </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={ ()=> navigation.navigate("Contact")} >
-     <View  style={styles.icons} >
-     <Icon name={'call-outline'} size={30} color={White_Color} />
-      <Text style={styles.iconsTxt} >CONTACT</Text>
-     </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity  onPress={ ()=> navigation.navigate("Report") }>
-     <View  style={styles.icons} >
-     <Icon name={'checkmark-done-outline'} size={30} color={White_Color} />
-      <Text style={styles.iconsTxt} >REPORT</Text>
-     </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity   onPress={ ()=> navigation.navigate("PrivacyPolicy") }>
-     <View  style={styles.icons} >
-     <Icon name={'construct-outline'} size={30} color={White_Color} />
-      <Text style={styles.iconsTxt} >POLICY</Text>
-     </View>
-        </TouchableOpacity>
-
-
-   </View>
-  
-  )
-  }
-
+  const getCms = async () => {
+    const { data, status } = await getApi(`${base_url}/get-cms`, "")
+    console.log(data);
+    setCms(data.result)
+  };
 
   return (
     <>
       <SafeAreaView style={styles.SafeAreaView2}>
-        <View style={styles.outerWrapper}>
+        <ScrollView>
+          <View style={styles.outerWrapper}>
+            {/* <ProfileUpper />
+          <ProfileCards /> */}
+            <View style={{}}>
+              <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>
+                <Image
+                  style={styles.avatar}
+                  source={{ uri: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_624206636_200013332000928034_376810.jpg" }}
+                />
+                <View style={{ marginStart: 10 }}>
+                  <Text style={styles.name}>Username</Text>
+                  <Text style={styles.number}>+91 000 00000</Text>
+                </View>
 
-          <ProfileUpper />
-          <ProfileCards />
+                <Icon name="chevron-forward-outline" size={25} style={{ position: "absolute", right: 20 }} />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.divider} />
 
+            {list.map((value) => {
+              return (
+                <View style={{}}>
+                  <TouchableOpacity style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} onPress={value.onPress}>
+                    <Text>{value.title}</Text>
+                    <Icon name="chevron-forward-outline" size={25} style={{}} />
+                  </TouchableOpacity>
+                  <View style={[styles.divider, { marginTop: 0 }]} />
+                </View>
+              )
+            })}
 
-        
-        
-        </View>
+            {cms.map((value) => {
+              return (
+                <View style={{}}>
+                  <TouchableOpacity onPress={() => navigation.navigate("CmsView", { data: value })} style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} >
+                    <Text>{value.page_name}</Text>
+                    <Icon name="chevron-forward-outline" size={25} style={{}} />
+                  </TouchableOpacity>
+                  <View style={[styles.divider, { marginTop: 0 }]} />
+                </View>
+              )
+            })}
+
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   )
@@ -107,7 +114,7 @@ const styles = StyleSheet.create({
 
   outerWrapper: {
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
     // justifyContent: 'center',
     backgroundColor: '#FFF'
   },
@@ -124,35 +131,35 @@ const styles = StyleSheet.create({
 
 
 
-   //Upper
-   CardContainer:{
+  //Upper
+  CardContainer: {
     alignItems: 'center',
     backgroundColor: "#fff",
     justifyContent: 'center',
     height: 200,
   },
-  ImgContainer:{
+  ImgContainer: {
     marginTop: 30,
     borderRadius: 50,
     textAlign: 'center',
-    flexDirection:'row', 
-    alignItems:'center', 
-    justifyContent:'center'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
 
 
-  
+
   //cards
-  iconsContainer:{
+  iconsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
     overflow: 'hidden',
     paddingBottom: 20,
-    
+
   },
-  icons:{
+  icons: {
     width: 150,
     height: '50%',
     justifyContent: 'center',
@@ -161,19 +168,36 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignItems: "center",
   },
-  iconsTxt:{
+  iconsTxt: {
     marginTop: 16,
     fontSize: 12,
-    fontWeight: 'bold',  
+    fontWeight: 'bold',
     color: Dark_Bule_Color,
-    
+
   },
 
 
 
 
-
-
+  avatar: { width: 70, height: 70, marginTop: 20, borderRadius: 350, borderColor: "#000", borderWidth: 0.5, marginStart: 10 },
+  name: {
+    textAlign: "center",
+    marginTop: 10,
+    fontWeight: "500",
+    fontSize: 18
+  },
+  number: {
+    textAlign: "center",
+    marginTop: 5,
+    fontSize: 12
+  },
+  divider: {
+    width: "100%",
+    backgroundColor: "lightgray",
+    height: 1,
+    alignSelf: "center",
+    marginTop: 10
+  }
 })
 
 

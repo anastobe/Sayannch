@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
@@ -15,8 +15,9 @@ export default StyleSheet.create({
   outerWrapper: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFF'
+    // justifyContent: 'center',
+    backgroundColor: '#FFF',
+    // paddingTop: Platform.OS == "ios" ? 0 :
   },
 
   buttonStyle: {
@@ -32,5 +33,12 @@ export default StyleSheet.create({
     fontSize: 18, 
     color: '#808080', 
     fontWeight: 'bold' 
+  },
+  divider: {
+    width: "100%",
+    backgroundColor: "lightgray",
+    height: 1,
+    alignSelf: "center",
+    marginTop: 10
   }
 })

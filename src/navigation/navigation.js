@@ -22,28 +22,27 @@ import Register from '../screens/Register'
 import MeetOurTeams from '../screens/MeetOurTeam'
 import Awards from '../screens/Awards';
 import Testimonials from '../screens/Testimonials';
-
-
-
-
+import CustomDrawer from './CustomDrawer';
 
 const Drawer = createDrawerNavigator();
-
-
-
-
 
 export default function NavigagatetoBottom() {
   return (
     // <NavigationContainer>
-      <Drawer.Navigator initialRouteName="BottomNavigation">
-      <Drawer.Screen name="Home" component={BottomNavigation} />
-      <Drawer.Screen name="Awards" component={Awards} />
-      <Drawer.Screen name="MeetOurTeams" component={MeetOurTeams} />
-      <Drawer.Screen name="News" component={News} />
-      <Drawer.Screen name="Testimonials" component={Testimonials} />
-      <Drawer.Screen name="Download" component={Download} />
-      </Drawer.Navigator>
+    <Drawer.Navigator
+      screenOptions={{
+        drawerActiveBackgroundColor: "#003C68",
+        drawerActiveTintColor: "#fff"
+      }}
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      initialRouteName="BottomNavigation">
+      <Drawer.Screen options={{ headerShown: false }} name="Home" component={BottomNavigation} />
+      <Drawer.Screen name="Awards" component={Awards} options={{ headerShown: false, }} />
+      <Drawer.Screen name="Meet Our Teams" component={MeetOurTeams} options={{ headerShown: false }} />
+      <Drawer.Screen name="News" component={News}  options={{ headerShown: false }} />
+      <Drawer.Screen name="Testimonials" component={Testimonials} options={{ headerShown: false }} />
+      <Drawer.Screen name="Download" component={Download} options={{ headerShown: false, }} />
+    </Drawer.Navigator>
     // </NavigationContainer>
   );
 }
@@ -282,8 +281,8 @@ export default function NavigagatetoBottom() {
 //   return (
 //     <NavigationContainer>
 //       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        
-        
+
+
 //         <Stack.Screen
 //             name="MyTabs"
 //             options={{ headerShown: false }}

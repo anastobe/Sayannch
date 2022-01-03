@@ -19,47 +19,26 @@ import ButtonC from './ButtonC'
 
 
 
-const DownloadCards = () => {  
-  
-  
-  const [state, setstate] = useState([
-    {
-      img: "w8" ,
-      fname: "File Name",
-    },
-    {
-      img: "w8",
-      fname: "File Name",
-    },
-    {
-      img: "w8",
-      fname: "File Name",
-    },
-  ])
-
-
+const DownloadCards = ({
+  image = "",
+  filename = ""
+}) => {
 
   return (
     <>
-    {state.map((v,i)=>{
-      return(
 
-        <View key={i} style={{ padding: 10 , borderColor: '#f0f0f0', borderWidth: 2,margin: 10, justifyContent: 'center' }} >
-    
+      <View style={{ padding: 10, borderColor: '#f0f0f0', borderWidth: 2, margin: 10, justifyContent: 'center' }} >
+
         <View style={{ alignItems: 'center' }} >
-          <Image style={{ width: 100, height: 100 }} source={require("../assets/images/file.png")} />
+          <Image style={{ width: 100, height: 100 }} source={{ uri: image }} />
         </View>
 
         <View style={{ alignItems: 'center', margin: 20 }} >
-            <Text style={{ color:grey, fontWeight: 'bold', fontSize: 20 }} >{v.fname}</Text>
+          <Text style={{ color: grey, fontWeight: 'bold', fontSize: 20 }} >{filename}</Text>
         </View>
-            <ButtonC names="Download" />
-    
-        </View>
-      )
-    })
+        <ButtonC names="Download" />
 
-    }
+      </View>
     </>
 
 

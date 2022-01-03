@@ -1,55 +1,83 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import {
-    SafeAreaView,
-    View,
-    Text,
-    StatusBar,
-    TouchableOpacity,
-    Alert,
-    Image,
-    Button
-  } from 'react-native'
+  SafeAreaView,
+  View,
+  Text,
+  StatusBar,
+  TouchableOpacity,
+  Alert,
+  Image,
+  Button,
+  FlatList
+} from 'react-native'
 
-  //styles
-  import styles from "./style"
+//styles
+import styles from "./style"
 
-  //color
-  import {grey} from "../Colors/Color"
+//color
+import { grey } from "../Colors/Color"
 
-  //component
-  import NewsCard from "../components/NewsCard"
+//component
+import NewsCard from "../components/NewsCard"
 import { ScrollView } from "react-native-gesture-handler"
 
 //component
 import PageLogo from "../components/PageLogo"
 import PageHading from "../components/PageHading"
- 
+import { getApi } from "../api/fakeApiUser"
+import { base_url } from "../utils/baseUrl"
+import { useSelector } from "react-redux"
+
 
 
 const News = () => {
+  const appSettings = useSelector(state => state.appSettings)
 
-    return (
-        <>
-        <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
-        <SafeAreaView style={styles.SafeAreaView2}>
-          <ScrollView>
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    getNews()
+  }, [])
+
+  const getNews = async () => {
+    const { data, status } = await getApi(`${base_url}/news`, "")
+    console.log(data);
+    setNews(data.result)
+  }
+
+  return (
+    <>
+      <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
+      <SafeAreaView style={styles.SafeAreaView2}>
+        <ScrollView>
           <View style={styles.outerWrapper}>
-            
 
-          <PageLogo />
+            <View style={{}} >
+              <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: 200, height: 100 }} />
+            </View>
 
-          <PageHading names="News" />
+            <View>
+              <Text style={{ fontSize: 35, fontWeight: "bold", color: grey, }} > News </Text>
+            </View>
 
-          <NewsCard />
-
-
-
-
+            <View>
+              <FlatList
+                data={news}
+                scrollEnabled={false}
+                renderItem={({ item }) => {
+                  return <NewsCard
+                    {...item} />
+                }}
+                ListEmptyComponent={
+                  <Text style={{ textAlign: "center", marginTop: 40, fontSize: 16}}>No News found</Text>
+                }
+              />
+            </View>
           </View>
-          </ScrollView>
-        </SafeAreaView>
-        </>
-    )
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  )
 }
 
 export default News
