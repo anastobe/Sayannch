@@ -29,9 +29,11 @@ import ButtonC from "../../components/ButtonC.js"
 import { grey } from "../../Colors/Color.js"
 
 
-const Login = () => {
+const Login = ({navigation}) => {
 
   const [email, setemail] = useState("")
+
+  console.log("email==>",email)
 
     return (
     <>
@@ -40,25 +42,36 @@ const Login = () => {
         <ScrollView>
         <View style={styles.outerWrapper}>
 
-          
-          <PageLogo />
+          <View style={{ marginTop: 50 }} >
+           <PageLogo />
+          </View>
 
           <PageHading names="Login" />
 
           <View style={{ width: '80%'  }} >
           <InputFieldC value={email} TextChange={setemail} names="Email" />
-            {/* <InputFieldC value={Email} InputPlaceHolderValue={SetEmail} names="Email" /> */}
-            {/* Enter Email-ID | Mobile Number  */}
           </View>
 
 
           <View style={{ width: '80%' }} >
+        <TouchableOpacity onPress={()=> navigation.navigate("OTP") } >
             <ButtonC names="Login" />
+        </TouchableOpacity>
           </View>
 
           
+
           <View>
-            <Text style={{ fontWeight: "bold", textDecorationLine: 'underline', marginTop: 25, marginBottom: 50 }} >Forgot Password?</Text>
+            <Text style={{ fontWeight: "bold", textDecorationLine: 'underline', marginTop: 20, marginBottom: 10 }} >Forgot Password?</Text>
+          </View>
+
+          <View style={{ margin: 5, flexDirection: "row" }} >
+           <Text style={{ fontSize: 16, color: "#000" }} >Don't have an account </Text>
+
+          <TouchableOpacity onPress={()=> navigation.navigate("Register") } > 
+           <Text style={{ fontWeight: "bold", textDecorationLine: "underline", fontSize: 16  }} > Sign Up? </Text>
+          </TouchableOpacity>
+
           </View>
 
           <View>
@@ -69,10 +82,16 @@ const Login = () => {
           <Text style={{ fontSize: 20, color: grey }} >LOGIN WITH</Text>
           </View>
 
-          <View style={{flexDirection: "row", marginTop: 20 }} >
+          <View style={{flexDirection: "row", marginTop: 10 }} >
           <Image style={{ width:40, height: 40, marginRight: 20 }}  source={require('../../assets/images/facebook.png')} /><Image  style={{ width:40, height: 40, }}   source={require('../../assets/images/google.png')} />
           </View>
  
+          <View style={{ margin: 20, flexDirection: "row" }} >
+          <Text style={{ fontSize: 20, color: grey }} >Skip Continue Without </Text>
+          <TouchableOpacity onPress={()=> navigation.navigate("Darawer")} >
+          <Text style={{ fontWeight: "bold", textDecorationLine: "underline", fontSize: 20  }} > Login? </Text>
+          </TouchableOpacity>
+          </View>
  
         </View>
         </ScrollView>

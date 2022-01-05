@@ -19,6 +19,7 @@ const AwardsCards = ({
   youtube_link = ""
 }) => {
 
+
   return (
     <View>
 

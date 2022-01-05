@@ -19,8 +19,11 @@ import SearchBar from './SearchBar'
 
 
 const Header = ({
-  menuIconPress = () => { }
-}) => {
+  menuIconPress = () => { }, name
+},) => {
+
+//  console.log("value==>",name) 
+
   const appSettings = useSelector(state => state.appSettings)
 
   return (
@@ -45,9 +48,11 @@ const Header = ({
 
       </View>
 
-      <View style={{ alignItems: 'center', marginTop: 20, paddingBottom: 10 }}>
+      { name =='invisinble' ? <></> : <View style={{ alignItems: 'center', marginTop: 5, paddingBottom: 10 }}>
         <SearchBar />
-      </View>
+      </View>}
+
+
     </View>
   )
 }

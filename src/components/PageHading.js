@@ -17,7 +17,7 @@ const PageHading = (props) => {
 
     console.log("====>",props.names);
 
-    const sty={ fontSize: 40, fontWeight: "bold", color: grey, marginTop: 60, marginBottom: 30  }
+    const sty={ fontSize: 40, fontWeight: "bold", color: grey, marginTop: 30, marginBottom: 20  }
 
     return (
         <View>

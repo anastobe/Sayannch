@@ -22,11 +22,11 @@ const ButtonC = (params,{navigation}) => {
 
 //style
   var buttonContainer = {
-    alignItems: 'center', backgroundColor: BtnColor , height: 55, borderRadius: 10 , marginTop: 30
+    alignItems: 'center', backgroundColor: BtnColor , height: 50, borderRadius: 10 , marginTop: 10
   }
 
   var buttonText = {
-    color: "#fff", lineHeight: 55, fontWeight: 'bold', fontSize: 25 
+    color: "#fff", lineHeight: 50, fontWeight: 'bold', fontSize: 22 
   }
 
   {params.login === 'Login' ? "Login" : 

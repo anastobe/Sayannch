@@ -39,6 +39,7 @@ import CmsView from './screens/CmsView';
 const Stack = createStackNavigator()
 
 const App = () => {
+  
 
   return (
     <Provider store={store}>
@@ -46,7 +47,21 @@ const App = () => {
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-
+          <Stack.Screen
+                name="Login"
+                options={{ headerShown: false }}
+                component={Login}
+          />
+          <Stack.Screen
+              name="Register"
+              options={{ headerShown: false }}
+              component={Register}
+          />
+          <Stack.Screen
+              name="OTP"
+              options={{ headerShown: false }}
+              component={VerifyOTP}
+            />
             <Stack.Screen
               name="Darawer"
               options={{ headerShown: false }}
@@ -75,11 +90,6 @@ const App = () => {
               component={MeetOurTeams}
             />
             <Stack.Screen
-              name="Register"
-              options={{ headerShown: false }}
-              component={Register}
-            />
-            <Stack.Screen
               name="Download"
               options={{ headerShown: false }}
               component={Download}
@@ -100,20 +110,11 @@ const App = () => {
               component={PrivacyPolicy}
             />
             <Stack.Screen
-              name="OTP"
-              options={{ headerShown: false }}
-              component={VerifyOTP}
-            />
-            <Stack.Screen
               name="News"
               options={{ headerShown: false }}
               component={News}
             />
-            <Stack.Screen
-              name="Login"
-              options={{ headerShown: false }}
-              component={Login}
-            />
+
 
             {/* add your another screen here using -> Stack.Screen */}
           </Stack.Navigator>

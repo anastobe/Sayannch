@@ -69,7 +69,25 @@ const Account = ({ navigation }) => {
             </View>
             <View style={styles.divider} />
 
-            {list.map((value) => {
+           {/* login */}
+            <View style={{}}>
+                  <TouchableOpacity style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} onPress={()=> navigation.navigate("Login") } >
+                    <Text>Login</Text>
+                    <Icon name="chevron-forward-outline" size={25} style={{}} />
+                  </TouchableOpacity>
+                  <View style={[styles.divider, { marginTop: 0 }]} />
+            </View>
+
+             {/* signup */}
+            <View style={{}}>
+                  <TouchableOpacity style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}   onPress={()=> navigation.navigate("Register") }>                                       
+                    <Text>Signup</Text>
+                    <Icon name="chevron-forward-outline" size={25} style={{}} />
+                  </TouchableOpacity>
+                  <View style={[styles.divider, { marginTop: 0 }]} />
+            </View>
+
+            {/* {list.map((value) => {
               return (
                 <View style={{}}>
                   <TouchableOpacity style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between" }} onPress={value.onPress}>
@@ -91,7 +109,7 @@ const Account = ({ navigation }) => {
                   <View style={[styles.divider, { marginTop: 0 }]} />
                 </View>
               )
-            })}
+            })} */}
 
           </View>
         </ScrollView>

@@ -25,33 +25,34 @@ import DownloadCards from "../components/DownloadCards"
 import InputFieldC from "../components/InputFieldC"
 import ButtonC from "../components/ButtonC"
 import { useSelector } from "react-redux"
+import Header from "../components/Header"
 
 //color
 
 
 
-const MeetOurTeams = () => {
+const MeetOurTeams = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
   const [cards, setcards] = useState([
     {
-      Image: require('../assets/images/file.png'),
+      Image: require('../assets/images/person.jpg'),
       name: "Andrew",
       section: "Project Manager",
     },
     {
-      Image: require('../assets/images/google.png'),
-      name: "Simona",
-      section: "Product Manager",
-    },
-    {
-      Image: require('../assets/images/google.png'),
+      Image: require('../assets/images/person2.jpg'),
       name: "Andrew",
       section: "Manager",
     },
     {
-      Image: require('../assets/images/file.png'),
-      name: "Anderson",
-      section: "Project Manager",
+      Image: require('../assets/images/person.jpg'),
+      name: "Simona",
+      section: "Product Manager",
+    },
+    {
+      Image: require('../assets/images/person.jpg'),
+      name: "Simona",
+      section: "Product Manager",
     },
   ])
 
@@ -62,7 +63,10 @@ const MeetOurTeams = () => {
       <SafeAreaView style={styles.SafeAreaView2}>
         <ScrollView>
           <View style={styles.outerWrapper}>
-
+          <Header
+            menuIconPress={() => navigation.toggleDrawer()}
+            name="invisinble"
+          />
 
             <View style={{}} >
               <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: 200, height: 100 }} />

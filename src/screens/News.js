@@ -22,15 +22,15 @@ import NewsCard from "../components/NewsCard"
 import { ScrollView } from "react-native-gesture-handler"
 
 //component
-import PageLogo from "../components/PageLogo"
-import PageHading from "../components/PageHading"
 import { getApi } from "../api/fakeApiUser"
 import { base_url } from "../utils/baseUrl"
 import { useSelector } from "react-redux"
+import Header from "../components/Header"
 
 
 
-const News = () => {
+
+const News = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
 
   const [news, setNews] = useState([]);
@@ -45,14 +45,20 @@ const News = () => {
     setNews(data.result)
   }
 
+
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
       <SafeAreaView style={styles.SafeAreaView2}>
         <ScrollView>
           <View style={styles.outerWrapper}>
+          
+          <Header
+            menuIconPress={() => navigation.toggleDrawer()}
+            name="invisinble"
+          />
 
-            <View style={{}} >
+            <View>
               <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: 200, height: 100 }} />
             </View>
 

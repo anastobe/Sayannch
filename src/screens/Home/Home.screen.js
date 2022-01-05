@@ -27,6 +27,8 @@ import { base_url } from '../../utils/baseUrl'
 const Home = ({
   navigation
 }) => {
+  
+  
   let images = [
     {
       image:

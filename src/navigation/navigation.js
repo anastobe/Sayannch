@@ -13,16 +13,16 @@ import Account from '../screens/Account/Account'
 import Shop from '../screens/Shop/Shop'
 import Explore from '../screens/Explore/Explore'
 import Login from '../screens/Auth/Login'
+import CustomDrawer from './CustomDrawer';
+import Awards from '../screens/Awards';
+import MeetOurTeams from '../screens/MeetOurTeam'
 import News from '../screens/News'
+import Testimonials from '../screens/Testimonials';
+import Download from '../screens/Download'
 import VerifyOTP from '../screens/VerifyOTP'
 import PrivacyPolicy from '../screens/PrivacyPolicy'
 import Report from '../screens/Report'
-import Download from '../screens/Download'
 import Register from '../screens/Register'
-import MeetOurTeams from '../screens/MeetOurTeam'
-import Awards from '../screens/Awards';
-import Testimonials from '../screens/Testimonials';
-import CustomDrawer from './CustomDrawer';
 
 const Drawer = createDrawerNavigator();
 

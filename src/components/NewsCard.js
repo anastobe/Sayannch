@@ -21,6 +21,7 @@ const NewsCard = ({
   descrition = ""
 }) => {
 
+
   const [card, setcard] = useState([
     {
       LeftHeading: "asdjlaslasdasdcccccccccccadidjasldi",

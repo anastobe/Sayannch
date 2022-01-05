@@ -23,10 +23,11 @@ import AwardsCards from "../components/AwardsCards"
 import { useSelector } from "react-redux"
 import { getApi } from "../api/fakeApiUser"
 import { base_url } from "../utils/baseUrl"
+import Header from "../components/Header"
 
 
 
-const Testimonials = () => {
+const Testimonials = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
 
   const [testimonials, setTestimonials] = useState([]);
@@ -48,7 +49,12 @@ const Testimonials = () => {
         <ScrollView>
           <View style={styles.outerWrapper}>
 
-            <View style={{}} >
+          <Header
+            menuIconPress={() => navigation.toggleDrawer()}
+            name="invisinble"
+          />
+
+            <View>
               <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: 200, height: 100 }} />
             </View>
 

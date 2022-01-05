@@ -25,10 +25,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { getAppSettings } from "../stores/actions/settings.action"
 import { getApi } from "../api/fakeApiUser"
 import { base_url } from "../utils/baseUrl"
+import Header from "../components/Header"
 
 const { width } = Dimensions.get("screen")
 
-const Download = () => {
+const Download = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
   const [downloads, setdownloads] = useState([])
 
@@ -55,6 +56,10 @@ const Download = () => {
         <ScrollView>
           <View style={styles.outerWrapper}>
 
+          <Header
+            menuIconPress={() => navigation.toggleDrawer()}
+            name="invisinble"
+          />
 
             <View style={{}} >
               <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: width / 1.7, height: 100 }} />

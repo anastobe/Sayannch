@@ -23,10 +23,9 @@ import AwardsCards from "../components/AwardsCards"
 import { getApi } from "../api/fakeApiUser"
 import { base_url } from "../utils/baseUrl"
 import { useSelector } from "react-redux"
+import Header from "../components/Header"
 
-
-
-const Awards = () => {
+const Awards = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
   const [awards, setawards] = useState([]);
 
@@ -46,7 +45,10 @@ const Awards = () => {
       <SafeAreaView style={styles.SafeAreaView2}>
         <ScrollView>
           <View style={styles.outerWrapper}>
-
+          <Header
+            menuIconPress={() => navigation.toggleDrawer()}
+            name="invisinble"
+          />
 
             <View style={{}} >
               <Image source={{ uri: appSettings.settings.website_logo }} resizeMode="contain" style={{ width: 200, height: 100 }} />
