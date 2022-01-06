@@ -11,7 +11,7 @@ import {
   ScrollView,
   FlatList
 } from 'react-native'
-import { Dark_Bule_Color, InputColorTxt, Orange_Color, White_Color } from '../../Colors/Color'
+import { BtnColor, Dark_Bule_Color, InputColorTxt, Orange_Color, White_Color } from '../../Colors/Color'
 import { DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 
 //icons
@@ -22,7 +22,7 @@ import { connect ,useDispatch } from 'react-redux'
 import { getAppSettings } from '../../stores/actions/settings.action';
 
 
-const Account = ({...props }) => {
+const Account = ({navigation,...props }) => {
   const [openIndex , setOpenIndex] = useState (null)
   // const [cms, setCms] = useState([])
   const [Show, setShow] = useState(false)
@@ -86,7 +86,7 @@ const getCms = async () => {
 
     },
     {
-      title: "Bank Details",
+      title: "Refear & Earns",
       onPress: () => { navigation.navigate("Report") },
       iconName:'card'
 
@@ -98,19 +98,19 @@ const getCms = async () => {
 
     },
     {
-      title: "Report",
+      title: "Settings",
       onPress: () => { navigation.navigate("Report") },
       iconName:'settings'
 
     },
     {
-      title: "Report",
+      title: "Support",
       onPress: () => { navigation.navigate("Report") },
       iconName:'chatbox-ellipses'
 
     },
     {
-      title: "Report",
+      title: "Faqs",
       onPress: () => { navigation.navigate("Report") },
       iconName:'chatbox'
 
@@ -126,6 +126,38 @@ const getCms = async () => {
     {
       title: "FAQ",
       onPress: () => { navigation.navigate("Faq") }
+    },
+    
+    {
+      title: "Awards",
+      onPress: () => { navigation.navigate("Awards") }
+    },
+    {
+      title: "News",
+      onPress: () => { navigation.navigate("News") }
+    },
+    
+    {
+      title: "Meet Our Teams",
+      onPress: () => { navigation.navigate("MeetOurTeams") }
+    },
+    
+    
+    {
+      title: "Testimonials",
+      onPress: () => { navigation.navigate("Testimonials") }
+    },
+    {
+      title: "Videos",
+      onPress: () => { navigation.navigate("Testimonials") }
+    },
+    {
+      title: "Downloads",
+      onPress: () => { navigation.navigate("Download") }
+    },
+    {
+      title: "Privacy Policy",
+      onPress: () => { navigation.navigate("PrivacyPolicy") }
     },
     {
       title: "Contact Us",
@@ -179,7 +211,7 @@ const getCms = async () => {
                       data={list}
                       renderItem={({item , index})=>{
                         return(
-<View style={{backgroundColor:openIndex == index ? '#006064' :'white',paddingHorizontal:20,paddingTop:15,paddingBottom:15,borderColor:'gray',borderWidth:1,marginHorizontal:10,marginVertical:10,borderRadius:5}}>
+<View style={{backgroundColor:openIndex == index ? BtnColor:'white',paddingHorizontal:20,paddingTop:15,paddingBottom:15,borderColor:openIndex == index ? BtnColor:'gray',borderWidth:1,marginHorizontal:10,marginVertical:10,borderRadius:5}}>
 <TouchableOpacity onPress={() => {setOpenIndex(index)}} style={{flexDirection:'row'}} >
  <Icon name={item.iconName} color={ openIndex == index ? 'white' :'black'} size={25} /> 
 <View style={{flexGrow:1}}>
@@ -209,7 +241,7 @@ const getCms = async () => {
                       {list2.map((value) => {
                   return (
                     <View style={{flex:1}}>
-  <TouchableOpacity style={{paddingVertical:10,paddingHorizontal:15}}>
+  <TouchableOpacity onPress={()=>{value.onPress()}} style={{paddingVertical:10,paddingHorizontal:15}}>
 
 <Text style={{color:'#fff'}}>{value.title}</Text>
   </TouchableOpacity>
@@ -255,14 +287,14 @@ Show?
 
             </View>:<View style={{alignItems:'center',justifyContent:'center'}}>
               <Text style={{textAlign:'center',fontSize:15,marginHorizontal:30}}>Already have an account so please login to your account otherwise Register first</Text>
-                  <View style={{marginTop:20,paddingHorizontal:10,width:'95%',paddingVertical:10,marginHorizontal:5,borderRadius:5,backgroundColor:'orange'}}>
+                  <View style={{marginTop:20,paddingHorizontal:10,width:'95%',paddingVertical:10,marginHorizontal:5,borderRadius:5,backgroundColor:BtnColor}}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
                       <Text style={{color:'#fff',textAlign:'center',fontSize:18}}>Login</Text>
                     </TouchableOpacity>
                     </View>
  
 
-                    <View style={{marginTop:20,paddingHorizontal:10,width:'95%',paddingVertical:10,marginHorizontal:5,borderRadius:5,backgroundColor:'orange'}}>
+                    <View style={{marginTop:20,paddingHorizontal:10,width:'95%',paddingVertical:10,marginHorizontal:5,borderRadius:5,backgroundColor:BtnColor}}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('Register')}}>
                       <Text style={{color:'#fff',textAlign:'center',fontSize:18}}>Signup</Text>
                     </TouchableOpacity>

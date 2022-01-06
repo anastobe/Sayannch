@@ -7,7 +7,7 @@ import BottomNavigation from './BottomNavigation'
 import Login from '../screens/Auth/Login'
 import News from '../screens/News'
 import VerifyOTP from '../screens/VerifyOTP'
-import PrivacyPolicy from '../screens/VerifyOTP'
+import PrivacyPolicy from '../screens/PrivacyPolicy'
 import Report from '../screens/Report'
 import Download from '../screens/Download'
 import Register from '../screens/Register'
@@ -20,6 +20,8 @@ import CmsView from "../screens/CmsView"
 import Faq from '../screens/Faq';
 import CustomDrawer from './CustomDrawer';
 import NavigagatetoBottom from './navigation';
+import Product from '../screens/Product';
+import Awards from '../screens/Awards';
 
 const Stack = createStackNavigator()
 
@@ -35,6 +37,17 @@ const AuthStack = () => {
                 options={{ headerShown: false }}
                 component={Login}
             />
+            <Stack.Screen
+                name="Product"
+                options={{ headerShown: false }}
+                component={Product}
+            />
+             <Stack.Screen
+                name="Awards"
+                options={{ headerShown: false }}
+                component={Awards}
+            />
+            
             <Stack.Screen
                 name="MyTabs"
                 options={{ headerShown: false }}

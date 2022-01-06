@@ -32,7 +32,8 @@ const InputFieldC = ({
 
 
         <View >
-            <TextInput placeholder={props.names==='Email' ? "  Enter Email" : 
+            <TextInput placeholder={
+              props.names==='Email' ? "  Enter Email" : 
 
             //contact
              props.names==='Enter Email' ? "Enter your email" : 
@@ -42,7 +43,7 @@ const InputFieldC = ({
              props.names==='Otp' ? "  Enter Otp" : 
 
              //contact page also
-             props.names==='fname' ? "  First Name" : 
+             props.names==='fname' ? "First Name" : 
              props.names==='lname' ? "  Last Name" : 
              
              props.names==='contact' ? "  Contact Number" : 
@@ -55,7 +56,11 @@ const InputFieldC = ({
              props.names==='PassR' ? "  *********" : 
 
             "Null" 
-             }   onChangeText={TextChange} placeholderColor={PlaceHolderColor} style={{ borderWidth: 1, borderColor: '#eaeaea', backgroundColor: '#f3f4f6', width: '100%', borderRadius: 10, marginTop: 20, marginBottom: 30, height: 55 }} />
+             }   
+             placeholderTextColor={"black"}
+             onChangeText={TextChange} 
+             value={value} 
+             style={{ borderWidth: 1, borderColor: '#eaeaea', backgroundColor: '#f3f4f6', width: '100%', borderRadius: 10, marginTop: 20, marginBottom: 30, height: 55 }} />
         </View>
    
     </>

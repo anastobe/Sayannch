@@ -58,7 +58,7 @@ const BottomNavigation = () => {
           }
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Explore"
         component={Explore}
         options={{
@@ -67,7 +67,7 @@ const BottomNavigation = () => {
             return <Icon name={'compass-outline'} size={25} color={color} />
           }
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Account"
         component={Account}

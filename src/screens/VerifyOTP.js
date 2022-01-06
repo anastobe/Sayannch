@@ -14,7 +14,7 @@ import {
   import styles from "./style"
 
   //color
-  import {grey} from "../Colors/Color"
+  import {BtnColor, grey} from "../Colors/Color"
 import InputFieldC from "../components/InputFieldC"
 import ButtonC from "../components/ButtonC"
 import {LoginSaved} from '../stores/actions/authAction'
@@ -65,7 +65,7 @@ navigation.navigate("MyTabs")
           </View> 
 
           <View style={{ width: '90%', marginTop: 20 }} >
-            <TouchableOpacity style={{backgroundColor:'orange',paddingTop:15,paddingBottom:15}} onPress={loginRedux}>
+            <TouchableOpacity style={{backgroundColor:BtnColor,paddingTop:15,paddingBottom:15}} onPress={loginRedux}>
 <Text style={{textAlign:'center',color:'#fff',fontWeight:'bold'}}>Enter</Text>
               {/* <ButtonC  names="Otp" /> */}
             </TouchableOpacity>

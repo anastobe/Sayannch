@@ -11,9 +11,10 @@ export default StyleSheet.create({
 
   outerWrapper: {
     flex: 1,
-    alignItems: 'center',
-    // justifyContent: 'center',
-    backgroundColor: '#FFF'
+    // alignItems: 'center',
+    // // justifyContent: 'center',
+    // backgroundColor: '#FFF'
+    paddingHorizontal:20
   },
   buttonStyle: {
     backgroundColor: '#EEE',
