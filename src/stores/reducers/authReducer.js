@@ -21,6 +21,14 @@ export const auth = (state = initialState, action) => {
                 users:payload
             }
         }
+        case "LOG_OUT": {
+            return {
+                ...initialState
+
+                
+                
+            }
+        }
         case 'LOGOUT_PROCESSED': {
             return {
         ...initialState

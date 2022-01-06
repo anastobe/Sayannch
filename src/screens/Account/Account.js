@@ -20,7 +20,7 @@ import { getApi } from '../../api/fakeApiUser'
 import { base_url } from '../../utils/baseUrl'
 import { connect ,useDispatch } from 'react-redux'
 import { getAppSettings } from '../../stores/actions/settings.action';
-
+import {logOut} from '../../stores/actions/authAction'
 
 const Account = ({navigation,...props }) => {
   const [openIndex , setOpenIndex] = useState (null)
@@ -117,7 +117,7 @@ const getCms = async () => {
     },
     {
       title: "Log Out",
-      onPress: () => { navigation.navigate("Report") },
+      onPress: () => { logOut() },
       iconName:'log-out'
 
     }
@@ -469,6 +469,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
 
   // LoginSaved
+  logOut
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Account)
