@@ -19,24 +19,24 @@ import Faq from './screens/Faq';
 
 //functions
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
-import Icon from 'react-native-vector-icons/Ionicons'
-import Testimonials from './screens/Testimonials'
+// import { createStackNavigator } from '@react-navigation/stack'
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import AuthStack from './navigation/AuthNavigation'
+// import Icon from 'react-native-vector-icons/Ionicons'
+// import Testimonials from './screens/Testimonials'
 
 
 //navigation
-import Darawer from "./navigation/navigation"
+// import Darawer from "./navigation/navigation"
 //loader
-import Loader from "./screens/Loader/Loader"
+// import Loader from "./screens/Loader/Loader"
 import { Provider, useDispatch } from 'react-redux';
 import { store, persistore } from './stores'
 import { PersistGate } from 'redux-persist/integration/react';
-import { getAppSettings } from './stores/actions/settings.action';
-import CmsView from './screens/CmsView';
+// import { getAppSettings } from './stores/actions/settings.action';
+// import CmsView from './screens/CmsView';
 
-const Stack = createStackNavigator()
+// const Stack = createStackNavigator()
 
 const App = () => {
   
@@ -45,7 +45,10 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistore} >
         <NavigationContainer>
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
+
+
+          < AuthStack />
+          {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
 
           <Stack.Screen
                 name="Login"
@@ -58,7 +61,7 @@ const App = () => {
               component={Register}
           />
           <Stack.Screen
-              name="OTP"
+              name="VerifyOTP"
               options={{ headerShown: false }}
               component={VerifyOTP}
             />
@@ -116,8 +119,7 @@ const App = () => {
             />
 
 
-            {/* add your another screen here using -> Stack.Screen */}
-          </Stack.Navigator>
+          </Stack.Navigator> */}
         </NavigationContainer>
       </PersistGate>
     </Provider>

@@ -24,7 +24,7 @@ const InputFieldC = ({
 
 }) => {  
   
-  console.log("params===>",props.names)
+  // console.log("params===>",props.names)
   
   
   return (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useEffect} from 'react';
 import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -23,10 +23,12 @@ import VerifyOTP from '../screens/VerifyOTP'
 import PrivacyPolicy from '../screens/PrivacyPolicy'
 import Report from '../screens/Report'
 import Register from '../screens/Register'
+import { connect } from 'react-redux';
 
 const Drawer = createDrawerNavigator();
 
-export default function NavigagatetoBottom() {
+ function NavigagatetoBottom({...props}) {
+  
   return (
     // <NavigationContainer>
     <Drawer.Navigator
@@ -47,9 +49,21 @@ export default function NavigagatetoBottom() {
   );
 }
 
+// export default connect(map)
+const mapStateToProps = state => {
+  return {
+    // user: state.userReducer.costCalcultorData,
+    data: state.authReducer.users
 
+  }
 
+}
+const mapDispatchToProps = {
 
+  // LoginSaved
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigagatetoBottom)
 
 
 

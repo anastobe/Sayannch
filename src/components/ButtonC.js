@@ -36,7 +36,7 @@ const ButtonC = (params,{navigation}) => {
   return (
       <View style={buttonContainer} >
 
-        <Text style={buttonText}  onPress={ ()=> navigation.navigate("MyTabs")}>  
+        <Text style={buttonText} >  
   
         {params.names === 'Login' ? "LOGIN" : 
         params.names === 'Otp' ? "SIGN IN" : 
