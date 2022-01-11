@@ -51,13 +51,13 @@ const getCms = async () => {
   const list = [
     {
       title: "Manage Adresses",
-      onPress: () => { navigation.navigate("Faq") },
+      onPress: () => { navigation.navigate("Report") },
       iconName:'location'
 
     },
     {
       title: "order History",
-      onPress: () => { navigation.navigate("Contact") },
+      onPress: () => { navigation.navigate("Report") },
       iconName:'wallet'
 
     },
@@ -117,7 +117,7 @@ const getCms = async () => {
     },
     {
       title: "Log Out",
-      onPress: () => { logOut() },
+      onPress: () => { props.logOut() },
       iconName:'log-out'
 
     }
@@ -141,6 +141,11 @@ const getCms = async () => {
       title: "Meet Our Teams",
       onPress: () => { navigation.navigate("MeetOurTeams") }
     },
+
+    {
+      title: "Report Infringement",
+      onPress: () => { navigation.navigate("Report") }
+    },
     
     
     {
@@ -149,7 +154,7 @@ const getCms = async () => {
     },
     {
       title: "Videos",
-      onPress: () => { navigation.navigate("Testimonials") }
+      onPress: () => { navigation.navigate("Videos") }
     },
     {
       title: "Downloads",
@@ -212,7 +217,7 @@ const getCms = async () => {
                       renderItem={({item , index})=>{
                         return(
 <View style={{backgroundColor:openIndex == index ? BtnColor:'white',paddingHorizontal:20,paddingTop:15,paddingBottom:15,borderColor:openIndex == index ? BtnColor:'gray',borderWidth:1,marginHorizontal:10,marginVertical:10,borderRadius:5}}>
-<TouchableOpacity onPress={() => {setOpenIndex(index)}} style={{flexDirection:'row'}} >
+<TouchableOpacity onPress={() => {setOpenIndex(index),item.onPress()}} style={{flexDirection:'row'}} >
  <Icon name={item.iconName} color={ openIndex == index ? 'white' :'black'} size={25} /> 
 <View style={{flexGrow:1}}>
   <Text style={{fontSize:16,marginLeft:10,color: openIndex == index ? 'white' :'black'}}>{item.title}</Text>

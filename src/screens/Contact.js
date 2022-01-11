@@ -244,40 +244,29 @@ isLoading &&
 
             </View>
 
-
-
-            {/* <View style={{ width: '90%' }} >
-              {array2.map((v, i) => {
-                return (
-                  <View style={{ marginTop: 30 }} key={i}>
-                    {v}
-                  </View>
-                )
-              })}
-            </View> */}
-
+          <View style={{ backgroundColor: "#000", width: '100%', padding: 5, marginTop: 10}} >
             <View style={{ width: '90%', marginTop: 30 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase" }} >Adress</Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >{appSettings.settings.address}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase", color: "#fff" }} >Address</Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >{appSettings.settings.address}</Text>
             </View>
 
             <View style={{ width: '90%', marginTop: 30 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase" }} >General Assistance</Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >{appSettings.settings.admin_email}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase", color: "#fff" }} >General Assistance</Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >{appSettings.settings.admin_email}</Text>
             </View>
 
             <View style={{ width: '90%', marginTop: 30 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase" }} >Merchantdizing Team</Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >{appSettings.settings.admin_contact}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase", color: "#fff" }} >Merchantdizing Team</Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >{appSettings.settings.admin_contact}</Text>
             </View>
 
             <View style={{ width: '90%', marginTop: 30 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase" }} >Mobile No</Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >+{appSettings.settings.contact_number1} </Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >+{appSettings.settings.contact_number2} </Text>
-              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20 }} >+{appSettings.settings.contact_number3}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 17, textTransform: "uppercase", color: "#fff" }} >Mobile No</Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >+{appSettings.settings.contact_number1} </Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >+{appSettings.settings.contact_number2} </Text>
+              <Text style={{ color: "#2A2A2A", fontSize: 16, marginTop: 5, lineHeight: 20, color: "#fff" }} >+{appSettings.settings.contact_number3}</Text>
             </View>
-
+          </View>
 
 
           </View>

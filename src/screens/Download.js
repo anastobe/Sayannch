@@ -44,8 +44,8 @@ const Download = ({navigation}) => {
 
   const getDownloads = async () => {
     const { data, status } = await getApi(`${base_url}/download`, "")
-    console.log(data);
     setdownloads(data.result)
+    console.log("==>",data);
   }
 
 
@@ -69,7 +69,7 @@ const Download = ({navigation}) => {
               <Text style={{ fontSize: 40, fontWeight: "bold", color: grey }} > Downloads </Text>
             </View>
 
-            <View style={{ width: '90%' }} >
+            {/* <View style={{ width: '90%' }} >
               <FlatList
                 data={downloads}
                 scrollEnabled={false}
@@ -80,7 +80,7 @@ const Download = ({navigation}) => {
                   <Text style={{ textAlign: "center", marginTop: 40, fontSize: 16}}>No downloads found</Text>
                 }
               />
-            </View>
+            </View> */}
 
           </View>
         </ScrollView>
