@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useEffect} from 'react';
 import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,12 +21,15 @@ import Testimonials from '../screens/Testimonials';
 import Download from '../screens/Download'
 import VerifyOTP from '../screens/VerifyOTP'
 import PrivacyPolicy from '../screens/PrivacyPolicy'
+import Videos from '../screens/Videos';
 import Report from '../screens/Report'
 import Register from '../screens/Register'
+import { connect } from 'react-redux';
 
 const Drawer = createDrawerNavigator();
 
-export default function NavigagatetoBottom() {
+ function NavigagatetoBottom({...props}) {
+  
   return (
     // <NavigationContainer>
     <Drawer.Navigator
@@ -39,6 +42,7 @@ export default function NavigagatetoBottom() {
       <Drawer.Screen options={{ headerShown: false }} name="Home" component={BottomNavigation} />
       <Drawer.Screen name="Awards" component={Awards} options={{ headerShown: false, }} />
       <Drawer.Screen name="Meet Our Teams" component={MeetOurTeams} options={{ headerShown: false }} />
+      <Drawer.Screen name="Videos" component={Videos} options={{ headerShown: false }} />
       <Drawer.Screen name="News" component={News}  options={{ headerShown: false }} />
       <Drawer.Screen name="Testimonials" component={Testimonials} options={{ headerShown: false }} />
       <Drawer.Screen name="Download" component={Download} options={{ headerShown: false, }} />
@@ -47,9 +51,21 @@ export default function NavigagatetoBottom() {
   );
 }
 
+// export default connect(map)
+const mapStateToProps = state => {
+  return {
+    // user: state.userReducer.costCalcultorData,
+    data: state.authReducer.users
 
+  }
 
+}
+const mapDispatchToProps = {
 
+  // LoginSaved
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigagatetoBottom)
 
 
 

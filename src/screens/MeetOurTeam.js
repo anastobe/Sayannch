@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import {
   SafeAreaView,
   View,
@@ -27,34 +27,57 @@ import ButtonC from "../components/ButtonC"
 import { useSelector } from "react-redux"
 import Header from "../components/Header"
 
+//api
+import { getApi } from "../api/fakeApiUser"
+import { base_url } from "../utils/baseUrl"
+
 //color
 
 
 
 const MeetOurTeams = ({navigation}) => {
   const appSettings = useSelector(state => state.appSettings)
-  const [cards, setcards] = useState([
-    {
-      Image: require('../assets/images/person.jpg'),
-      name: "Andrew",
-      section: "Project Manager",
-    },
-    {
-      Image: require('../assets/images/person2.jpg'),
-      name: "Andrew",
-      section: "Manager",
-    },
-    {
-      Image: require('../assets/images/person.jpg'),
-      name: "Simona",
-      section: "Product Manager",
-    },
-    {
-      Image: require('../assets/images/person.jpg'),
-      name: "Simona",
-      section: "Product Manager",
-    },
-  ])
+
+
+
+
+  const [Teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    getTeams()
+  }, [])
+
+  const getTeams = async () => {
+    const { data, status } = await getApi(`${base_url}/teams`, "")
+    setTeams(data.result)
+  }
+
+
+
+
+
+  // const [cards, setcards] = useState([
+  //   {
+  //     Image: require('../assets/images/person.jpg'),
+  //     name: "Andrew",
+  //     section: "Project Manager",
+  //   },
+  //   {
+  //     Image: require('../assets/images/person2.jpg'),
+  //     name: "Andrew",
+  //     section: "Manager",
+  //   },
+  //   {
+  //     Image: require('../assets/images/person.jpg'),
+  //     name: "Simona",
+  //     section: "Product Manager",
+  //   },
+  //   {
+  //     Image: require('../assets/images/person.jpg'),
+  //     name: "Simona",
+  //     section: "Product Manager",
+  //   },
+  // ])
 
 
   return (
@@ -78,16 +101,15 @@ const MeetOurTeams = ({navigation}) => {
 
             <View style={{ flexDirection: "row", width: '90%', flexWrap: "wrap", justifyContent: "space-between" }} >
 
-              {cards.map((v, i) => {
-                return (
+              {Teams.map((v, i) => {
 
-                  <View key={i} style={{ alignItems: "center", width: '50%', marginTop: 30 }} >
-                    <Image style={{ width: 120, height: 120 }} source={v.Image} />
-                    <Text>{v.name}</Text>
-                    <Text>{v.section}</Text>
+                return (
+                  <View key={v.team_ID} style={{ alignItems: "center" ,width: '50%', marginTop: 30 }} >
+                    <Image style={{ width: 120, height: 120 }} source={{ uri: v.image }} />
+                    <Text style={{ textAlign: "center" }} >{v.name}</Text>
+                    <Text style={{ textAlign: "center" }} >{v.role}</Text>
                     <Text>______</Text>
                   </View>
-
                 )
               })
 

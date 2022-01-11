@@ -15,9 +15,9 @@ import style from "../screens/style";
 
 const PageHading = (props) => {
 
-    console.log("====>",props.names);
+    // console.log("====>",props.names);
 
-    const sty={ fontSize: 40, fontWeight: "bold", color: grey, marginTop: 30, marginBottom: 20  }
+    const sty={ fontSize: 22, fontWeight: "bold", color: grey, marginTop: 30, marginBottom: 20  }
 
     return (
         <View>

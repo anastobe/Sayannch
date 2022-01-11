@@ -12,7 +12,7 @@ import {
 
 const PageLogo = (props) => {
 
-    console.log("page logo ===>",props.styles)
+    // console.log("page logo ===>",props.styles)
 
     return (
         <View style={{  height: 60 }} >
